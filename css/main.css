@@ -1,0 +1,11 @@
+@charset "utf-8";
+body{
+
+}
+
+.header {}
+.header>ul {float:left; height: 34px; line-height: 34px;}
+.header #logo { width: 30%;}
+.header .topHeader { width: 40%;}
+.header .logBar { width: 30%;}
+
