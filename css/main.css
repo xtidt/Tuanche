@@ -1,11 +1,33 @@
 @charset "utf-8";
-body{
-
+body,div,ul,li,h1,h2,h3,h4{
+    font-size: 12px;
+    font-family: "微软雅黑";
 }
 
+body img { width: 100%;}
+/*头部*/
 .header {}
 .header>ul {float:left; height: 34px; line-height: 34px;}
 .header #logo { width: 30%;}
 .header .topHeader { width: 40%;}
 .header .logBar { width: 30%;}
+br.clearfix { height: 0; clear: both; line-height: 0;}
+.ad {
+    padding-top: 44px;
+    border-color: #145fd7;
+    background-color: #4a87ee;
+}
+/*导航*/
+.nav { padding:0; margin:0; clear: both; background-color: #4a87ee;}
+.nav li { list-style: none; float: left;; width:25%; text-align: center; margin:10px 0px;
+    border-right:1px solid #fff; color:#fff; }
+.nav li:nth-of-type(4) { border: none;}
 
+/*面包屑*/
+.breadcrumbs {
+    height: 40px; line-height: 40px; padding-left: 16px;
+}
+
+/*热门车型*/
+.hot-car {}
+.hot-car h4.con-title { margin:0; padding:0; }
