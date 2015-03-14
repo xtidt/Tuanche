@@ -11,6 +11,7 @@
   <!-- style -->
   <link rel="stylesheet" href="css/ionic.min.css"/>
   <link rel="stylesheet" href="css/main.css"/>
+  <link rel="stylesheet" href="css/swiper.min.css">
 </head>
 <body>
 <!--头部-->
@@ -42,11 +43,183 @@
     <span>随时可退订</span>
 </section>
 
-<!--热门车型-->
-<section class="hot-car">
-    <h4 class="con-title">热门车型</h4>
-</section>
+<!-- 主体内容 -->
+<section class="content">
+  <!--热门车型-->
+  <div class="index-title">
+    <h4>为什么选择优优买车</h4>
+  </div>
 
+  <!-- swiper -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <ul class="slideCell">1</ul>
+      </div>
+      <div class="swiper-slide">
+        <ul class="slideCell">1</ul>
+      </div>
+      <div class="swiper-slide">
+        <ul class="slideCell">1</ul>
+      </div>
+      <div class="swiper-slide">
+        <ul class="slideCell">1</ul>
+      </div>
+    </div>
+ 
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <!--热门车型-->
+  <div class="index-title">
+    <h4>热门车型</h4>
+  </div>
+  <div class="list">
+    <ul>
+      <li>
+        <a href="#">
+          <img src="img/index_list_img1.jpg">
+          <div>
+            <p>新奇骏</p>
+            <p class="many-buy"> <strong class="fc-orange">87</strong>
+              人已报名
+            </p>
+          </div>
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          <img src="img/index_list_img1.jpg">
+          <div>
+            <p>新奇骏</p>
+            <p class="many-buy"> <strong class="fc-orange">87</strong>
+              人已报名
+            </p>
+          </div>
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          <img src="img/index_list_img1.jpg">
+          <div>
+            <p>新奇骏</p>
+            <p class="many-buy"> <strong class="fc-orange">87</strong>
+              人已报名
+            </p>
+          </div>
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          <img src="img/index_list_img1.jpg">
+          <div>
+            <p>新奇骏</p>
+            <p class="many-buy"> <strong class="fc-orange">87</strong>
+              人已报名
+            </p>
+          </div>
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          <img src="img/index_list_img1.jpg">
+          <div>
+            <p>新奇骏</p>
+            <p class="many-buy"> <strong class="fc-orange">87</strong>
+              人已报名
+            </p>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!--热门品牌-->
+  <div class="index-title">
+    <h4>热门品牌</h4>
+  </div>
+  <div class="list">
+    <ul>
+      <li>
+        <a href="#">
+          <img src="img/index_list_img1.jpg">
+          <div>
+            <p>新奇骏</p>
+            <p class="many-buy"> <strong class="fc-orange">87</strong>
+              人已报名
+            </p>
+          </div>
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          <img src="img/index_list_img1.jpg">
+          <div>
+            <p>新奇骏</p>
+            <p class="many-buy"> <strong class="fc-orange">87</strong>
+              人已报名
+            </p>
+          </div>
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          <img src="img/index_list_img1.jpg">
+          <div>
+            <p>新奇骏</p>
+            <p class="many-buy"> <strong class="fc-orange">87</strong>
+              人已报名
+            </p>
+          </div>
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          <img src="img/index_list_img1.jpg">
+          <div>
+            <p>新奇骏</p>
+            <p class="many-buy"> <strong class="fc-orange">87</strong>
+              人已报名
+            </p>
+          </div>
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          <img src="img/index_list_img1.jpg">
+          <div>
+            <p>新奇骏</p>
+            <p class="many-buy"> <strong class="fc-orange">87</strong>
+              人已报名
+            </p>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+<!-- 尾部 -->
+<footer class="textCenter">
+  <div class="hot-line fsize1">客服电话：400-6969-123</div>
+  <ul>优优买车服务有限公司经营许可证：<br>闽ICP证130329 2015 翻版必究 <br> 闽ICP备 1201456号-3</ul>
+</footer>
+
+<script src="js/swiper/swiper.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        spaceBetween: 30
+    });
+</script>
 <!-- script -->
 <!--<script src="js/require.config.js"></script>-->
 <!--<script src="js/require/require-min.js"></script>-->

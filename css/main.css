@@ -1,7 +1,10 @@
 @charset "utf-8";
-body,div,ul,li,h1,h2,h3,h4{
+html, body, h1, h2, h3, h4, h5, h6, dl, dt, dd, ul, ol, li, th, td, p, blockquote, pre, form, fieldset, legend, input, button, textarea, hr{
     font-size: 12px;
     font-family: "微软雅黑";
+    margin: 0;
+    padding:0;
+    list-style: none;
 }
 
 body img { width: 100%;}
@@ -25,9 +28,110 @@ br.clearfix { height: 0; clear: both; line-height: 0;}
 
 /*面包屑*/
 .breadcrumbs {
-    height: 40px; line-height: 40px; padding-left: 16px;
+    height: 30px; line-height: 40px; padding-left: 16px;
+}
+
+/*主体内容*/
+.content {
+	background: #fff;
+	padding: 0 11px 20px;
 }
 
 /*热门车型*/
-.hot-car {}
-.hot-car h4.con-title { margin:0; padding:0; }
+.index-title {
+	border-bottom: 1px solid #c7cdd9;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.index-title h4 { 
+	margin:0; padding:0; 
+	display: inline-block;
+	padding: 0 12px;
+	font-size: 14px;
+	color: #000000;
+	position: relative;
+	bottom: -10px;
+	background: #fff;
+}
+
+/*列表*/
+.list {}
+.list ul { clear: both; }
+.list ul li {
+	border-radius: 10px;
+	width: 48%;
+	float: left;
+	border: 1px solid #c7cdd9;
+	background: #ffffff;
+	padding: 0 6px 6px 8px;
+	height: 160px;
+	margin-right: 2%;
+	margin-bottom: 8px;
+}
+
+.list li a {
+	display: block;
+	width: 134px;
+	margin: 0 auto;
+	text-decoration: none;
+}
+
+.list li a img {
+	width: 120px;
+	height: 80px;
+	margin: 8px 0;
+}
+
+.list li a>div {
+	position: relative;
+}
+
+.list li p {
+	line-height: 20px;
+	color: #000000;
+	font-size: 1.2em;
+	margin-top: -2px;
+	text-align: center;
+}
+
+.list ul:after {
+	content: " ";
+	display: block;
+	overflow: hidden;
+	height: 0;
+	clear: both;
+}
+
+.hot-line {
+
+}
+
+footer {
+	padding-top: 10px;
+	background: #4a87ee;
+	color:#fff;
+}
+footer ul {
+	padding:0 0 20px 0;
+}
+
+/*swpier*/
+.swiper-container{width:100%;padding-top:0px;padding-bottom:0px;}
+.swiper-container:after{
+	content: " ";
+	display: block;
+	overflow: hidden;
+	height: 0;
+	clear: both;
+}
+.swiper-slide{width:100%;}
+
+.slideCell { height: 100px; border:1px solid #dadada; border-radius: 10px;}
+
+/*public*/
+.textCenter { text-align: center;}
+.fc-orange { color:#cc2311;}
+.fsize1 { font-size: 1.2em;}
+
+
+
