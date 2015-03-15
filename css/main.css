@@ -147,8 +147,9 @@ br.clearfix { height: 0; clear: both; line-height: 0;}
     font-weight: bold;
 }
 
-.hot-line {
-
+/*城市选择*/
+.city-select {
+    padding-top:44px;
 }
 
 footer {
