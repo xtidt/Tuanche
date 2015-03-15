@@ -11,12 +11,15 @@ body img { width: 100%;}
 /*头部*/
 .header {}
 .header>ul {float:left; height: 34px; line-height: 34px;}
-.header #logo { width: 30%;}
-.logo-icon { font-size: 16px;padding-right: 4px; position: relative;}
-.arrow-down { padding-left: 4px;}
 .header .topHeader { width: 40%; text-align: center;}
 .header .logBar { width: 30%; text-align: right;}
-.header .logBar i { font-size: 16px; padding-right: 10px; }
+.header .logBar i { font-size: 18px; padding-right: 10px; }
+
+.header #logo,#reply { width: 30%;}
+.header #reply i { font-size: 2em;}
+.header .logo-icon { font-size: 16px;padding-right: 4px; position: relative;}
+.header .arrow-down { padding-left: 4px;}
+
 br.clearfix { height: 0; clear: both; line-height: 0;}
 .ad {
     padding-top: 44px;
