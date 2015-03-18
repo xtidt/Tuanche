@@ -188,7 +188,7 @@ br.clearfix { height: 0; clear: both; line-height: 0;}
 /*问答*/
 .question {}
 .question h3 { font-size: 13px; font-weight: bold; padding-bottom: 5px;}
-.question p { font-size: 13px; padding-bottom: 5px; line-height: 20px;}
+.question p { font-size: 13px; padding: 0px 0; line-height: 22px;}
 
 
 .leftCloumn { float:left;}
