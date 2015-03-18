@@ -185,7 +185,28 @@ br.clearfix { height: 0; clear: both; line-height: 0;}
 .fillin-blank table td:nth-of-type(1) { width: 15%;}
 .fillin-blank table td:nth-of-type(2) { width: 85%;}
 
+/*问答*/
+.question {}
+.question h3 { font-size: 13px; font-weight: bold; padding-bottom: 5px;}
+.question p { font-size: 13px; padding-bottom: 5px; line-height: 20px;}
 
+
+.leftCloumn { float:left;}
+.rightCloumn { float:right;}
+.w-70p { width:70%;}
+.w-60p { width:60%;}
+.w-40p { width:40%;}
+.w-30p { width:30%;}
+.hrStyle { padding: 0; margin: 5px 0px; border: none; height: 1px; background: #c7cdd9;}
+.more {
+    position: absolute;
+    right:4px;
+    margin-top: -11px;
+    font-size: 13px;
+    padding: 0px 5px;
+    background: #fff;
+}
+.fontB { font-weight: bold;}
 
 footer {
 	padding-top: 10px;
