@@ -222,6 +222,11 @@ br.clearfix { height: 0; clear: both; line-height: 0;}
 .question h3 { font-size: 13px; font-weight: bold; padding-bottom: 5px;}
 .question p { font-size: 13px; padding: 0px 0; line-height: 22px;}
 
+/* 报价 */
+.detail-row { }
+
+/* 成交记录 */
+.bid-history {}
 
 .leftCloumn { float:left;}
 .rightCloumn { float:right;}
@@ -230,6 +235,7 @@ br.clearfix { height: 0; clear: both; line-height: 0;}
 .w-40p { width:40%;}
 .w-30p { width:30%;}
 .hrStyle { padding: 0; margin: 5px 0px; border: none; height: 1px; background: #c7cdd9;}
+.textR { text-align: right;}
 .more {
     position: absolute;
     right:4px;
@@ -239,6 +245,8 @@ br.clearfix { height: 0; clear: both; line-height: 0;}
     background: #fff;
 }
 .fontB { font-weight: bold;}
+.fontC1 { color:#145fd7;}
+.fontS1 { font-size: 14px;}
 
 footer {
 	padding-top: 10px;
@@ -259,7 +267,6 @@ footer ul {
 	clear: both;
 }
 .swiper-slide{width:100%;}
-
 .slideCell { height: 100px; border:1px solid #dadada; border-radius: 10px;}
 
 /*public*/
