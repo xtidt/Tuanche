@@ -56,7 +56,7 @@ br.clearfix { height: 0; clear: both; line-height: 0;}
 .index-title {
 	border-bottom: 1px solid #c7cdd9;
 	text-align: center;
-	margin-bottom: 20px;
+	margin-bottom: 14px;
 }
 .index-title h4 { 
 	margin:0; padding:0; 
@@ -228,6 +228,15 @@ br.clearfix { height: 0; clear: both; line-height: 0;}
 /* 成交记录 */
 .bid-history {}
 
+/*建议*/
+.suggestion {
+	border: 1px solid #c7cdd9; resize: none; width: 100%;
+}
+
+.record-title { clear:both; padding: 6px 0; font-size: 14px;}
+.record-row { clear:both; padding-bottom: 6px;}
+.record-row p { padding:2px 0px;}
+
 .leftCloumn { float:left;}
 .rightCloumn { float:right;}
 .w-70p { width:70%;}
@@ -236,6 +245,7 @@ br.clearfix { height: 0; clear: both; line-height: 0;}
 .w-30p { width:30%;}
 .hrStyle { padding: 0; margin: 5px 0px; border: none; height: 1px; background: #c7cdd9;}
 .textR { text-align: right;}
+.textM { text-align: center;}
 .more {
     position: absolute;
     right:4px;
@@ -247,6 +257,7 @@ br.clearfix { height: 0; clear: both; line-height: 0;}
 .fontB { font-weight: bold;}
 .fontC1 { color:#145fd7;}
 .fontS1 { font-size: 14px;}
+.border-s1 { border-bottom:1px dotted #c7cdd9;}
 
 footer {
 	padding-top: 10px;
