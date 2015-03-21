@@ -258,6 +258,7 @@ br.clearfix { height: 0; clear: both; line-height: 0;}
 .fontC1 { color:#145fd7;}
 .fontS1 { font-size: 14px;}
 .border-s1 { border-bottom:1px dotted #c7cdd9;}
+.paddingS1 { padding:4px 0;}
 
 footer {
 	padding-top: 10px;
