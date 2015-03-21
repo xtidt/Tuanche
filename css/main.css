@@ -69,6 +69,38 @@ br.clearfix { height: 0; clear: both; line-height: 0;}
 	background: #fff;
 }
 
+/*热门品牌*/
+.brand-list li{
+	width: 48%;
+	float: left;
+	border: 1px solid #c7cdd9;
+	background: #ffffff;
+	margin-right: 2%;
+	margin-bottom: 8px;
+	height: 60px;
+	padding: 7px;
+	border-radius: 8px;
+}
+
+.brand-list li a{
+	display:block;
+	width:134px;
+	margin:0 auto;
+	color: #000;
+	text-decoration: none;
+}
+.brand-list li img{
+	width: 44px;
+	height: 44px;
+	float: left;
+}
+
+.brand-list li p {
+	margin-left: 56px;
+	line-height: 44px;
+	padding-left: 0;
+}
+
 /*列表*/
 .list {}
 .list ul { clear: both; }
