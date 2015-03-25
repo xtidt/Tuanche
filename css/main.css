@@ -20,6 +20,9 @@ body img { width: 100%;}
 .header .logo-icon { font-size: 16px;padding-right: 4px; position: relative;}
 .header .arrow-down { padding-left: 4px;}
 
+.clearfix:before,.clearfix:after {
+	clear: both;
+}
 br.clearfix { height: 0; clear: both; line-height: 0;}
 .ad {
     padding-top: 44px;
