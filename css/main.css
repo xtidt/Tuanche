@@ -1,6 +1,6 @@
 @charset "utf-8";
 html, body, h1, h2, h3, h4, h5, h6, dl, dt, dd, ul, ol, li, th, td, p, blockquote, pre, form, fieldset, legend, input, button, textarea, hr{
-    font-size: 12px;
+    font-size: 14px;
     font-family: "微软雅黑";
     margin: 0;
     padding:0;
@@ -12,10 +12,12 @@ body img { width: 100%;}
 .header {}
 .header>ul {float:left; height: 34px; line-height: 34px;}
 .header .topHeader { width: 40%; text-align: center;}
+.header .topHeader a { color: #fff; text-decoration: none;}
 .header .logBar { width: 30%; text-align: right;}
 .header .logBar i { font-size: 18px; padding-right: 10px; }
 
 .header #logo,#reply { width: 30%;}
+.header #reply a {color: white;}
 .header #reply i { font-size: 2em;}
 .header .logo-icon { font-size: 16px;padding-right: 4px; position: relative;}
 .header .arrow-down { padding-left: 4px;}
@@ -46,7 +48,7 @@ br.clearfix { height: 0; clear: both; line-height: 0;}
 
 /*面包屑*/
 .breadcrumbs {
-    height: 30px; line-height: 40px; padding-left: 16px; font-size: 13px;
+    height: 30px; line-height: 40px; padding-left: 16px; font-size: 16px;
 }
 
 /*主体内容*/
@@ -65,7 +67,8 @@ br.clearfix { height: 0; clear: both; line-height: 0;}
 	margin:0; padding:0; 
 	display: inline-block;
 	padding: 0 12px;
-	font-size: 14px;
+	font-size: 15px;
+	font-weight: bold;
 	color: #000000;
 	position: relative;
 	bottom: -10px;
@@ -104,6 +107,8 @@ br.clearfix { height: 0; clear: both; line-height: 0;}
 	padding-left: 0;
 }
 
+.brand,.truckmodel { width: 100%;}
+
 /*列表*/
 .list {}
 .list ul { clear: both; }
@@ -139,7 +144,7 @@ br.clearfix { height: 0; clear: both; line-height: 0;}
 .list li p {
 	line-height: 20px;
 	color: #000000;
-	font-size: 1.2em;
+	font-size: 1em;
 	margin-top: -2px;
 	text-align: center;
 }
@@ -175,7 +180,7 @@ br.clearfix { height: 0; clear: both; line-height: 0;}
 .slide_item_wrap h2:last-child{
     font-weight:normal;
     height:60px;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .slide_item_wrap h2:nth-of-type(1){
@@ -189,8 +194,9 @@ br.clearfix { height: 0; clear: both; line-height: 0;}
 }
 
 .city-select .row {
-    margin:3px 0px;
+    margin:3px 0px; cursor: pointer;
 }
+.city-select .row a { color:#fff; text-decoration: none;}
 .city-select .groups {}
 .city-select h3 {font-size: 16px; font-weight: bold;}
 .city-select .groups li {
@@ -216,14 +222,14 @@ br.clearfix { height: 0; clear: both; line-height: 0;}
 .fillin-blank table tr {}
 .fillin-blank table tr td { padding: 5px 0px;}
 .fillin-blank table tr td input { border-bottom: 1px dotted #d3d3d3;}
-.fillin-blank table tr td select { padding:7px 0px;}
+.fillin-blank table tr td select { padding:7px 0px; width: 100%;}
 .fillin-blank table td:nth-of-type(1) { width: 15%;}
 .fillin-blank table td:nth-of-type(2) { width: 85%;}
 
 /*问答*/
 .question {}
-.question h3 { font-size: 13px; font-weight: bold; padding-bottom: 5px;}
-.question p { font-size: 13px; padding: 0px 0; line-height: 22px;}
+.question h3 { font-size: 14px; font-weight: bold; padding-bottom: 8px;}
+.question p { font-size: 14px; padding: 0px 0; line-height: 28px;}
 
 /* 报价 */
 .detail-row { }
@@ -253,10 +259,11 @@ br.clearfix { height: 0; clear: both; line-height: 0;}
     position: absolute;
     right:4px;
     margin-top: -11px;
-    font-size: 13px;
+    font-size: 16px;
     padding: 0px 5px;
     background: #fff;
 }
+.pb10 {padding-bottom: 5px;}
 .fontB { font-weight: bold;}
 .fontC1 { color:#145fd7;}
 .fontS1 { font-size: 14px;}
@@ -288,7 +295,7 @@ footer ul {
 .textCenter { text-align: center;}
 .fc-orange { color:#cc2311;}
 .orange { color:orange;}
-.fsize1 { font-size: 1.2em;}
+.fsize1 { font-size: 1.4em; font-weight: bold; padding-bottom: 6px;}
 .ico { font-size:3.2em; color: #4a87ee;}
 .paddingT44 { padding-top:44px;}
 .marginT20 {margin-top: 20px;}

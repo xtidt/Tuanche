@@ -1,245 +1,132 @@
 $(function() {
   function pageInit() {
-    BindEvent();
     // ajax
     loadData();
   }
 
-  function BindEvent() {
-    var swiper = new Swiper('.swiper-container', {
-      pagination: '.swiper-pagination',
-      paginationClickable: true,
-      spaceBetween: 30
-    });
+  function loadData() {
+    loadCity(drawList);
   }
 
-  function loadData() {
-    $.ajax({
+  function loadCity(callback){
+    callback(testData);//测试数据
+    /*$.ajax({
       type: 'get',
-      url: 'http://mobileapi.uumaiche.com/City/CityList',
+      url: ApiUrl + 'City/CityList',
       success: function(data) {
-        console.log(data);
+        if (!!callback && typeof callback == 'function' && data.Code == 1)
+          callback(data);
+        }
       }
-    });
+    });*/
+  }
+
+  //绘制列表
+  function drawList(){
+    if (arguments.length == 0) return false;
+    var _data = arguments[0].Data;
+    var htmlStr = '';
+    for (var i = 0, len = _data.length; i < len; i++) {
+      htmlStr += '<ul class="row">\
+            <h3>'+ _data[i].pinYin +'</h3>\
+        </ul>\
+        <ul class="row groups">';
+
+        for(var j=0; j<_data[i].cityData.length; j++){
+          htmlStr += '<li onclick="gotoUrl(\'#'+ _data[i].cityData[j].id +'\')">'+ _data[i].cityData[j].cityName +'</li>';
+        }
+            
+      htmlStr += '</ul>';
+    }
+
+    $('#js-city-select').html(htmlStr);
   }
 
   pageInit();
 })
 
-var _test = {
+var testData = {
   "Code": 1,
   "Data": [{
     "pinYin": "B",
-    "carBand": [{
-      "id": 4,
-      "carBand": "宝马"
-    }, {
-      "id": 5,
-      "carBand": "北京奔驰"
-    }, {
-      "id": 9,
-      "carBand": "北京现代"
-    }, {
-      "id": 26,
-      "carBand": "北京汽车"
-    }, {
-      "id": 31,
-      "carBand": "一汽奔腾"
-    }, {
-      "id": 33,
-      "carBand": "比亚迪"
+    "cityData": [{
+      "id": 28,
+      "cityName": "北京市"
     }]
   }, {
     "pinYin": "C",
-    "carBand": [{
-      "id": 15,
-      "carBand": "长安铃木"
-    }, {
-      "id": 18,
-      "carBand": "长安马自达"
-    }, {
-      "id": 23,
-      "carBand": "昌河铃木"
-    }, {
-      "id": 29,
-      "carBand": "长城汽车"
-    }, {
-      "id": 34,
-      "carBand": "长安汽车"
-    }, {
-      "id": 41,
-      "carBand": "长安福特"
-    }]
-  }, {
-    "pinYin": "D",
-    "carBand": [{
-      "id": 11,
-      "carBand": "东风日产"
-    }, {
-      "id": 14,
-      "carBand": "东风悦达起亚"
-    }, {
-      "id": 19,
-      "carBand": "东风本田"
-    }, {
-      "id": 27,
-      "carBand": "东南汽车"
-    }, {
-      "id": 36,
-      "carBand": "东风启辰"
-    }, {
-      "id": 42,
-      "carBand": "道奇"
-    }, {
-      "id": 47,
-      "carBand": "东风雪铁龙"
-    }, {
-      "id": 49,
-      "carBand": "东风标致"
+    "cityData": [{
+      "id": 382,
+      "cityName": "重庆市"
     }]
   }, {
     "pinYin": "F",
-    "carBand": [{
-      "id": 53,
-      "carBand": "菲亚特"
+    "cityData": [{
+      "id": 77,
+      "cityName": "福州市"
     }]
   }, {
     "pinYin": "G",
-    "carBand": [{
-      "id": 10,
-      "carBand": "广汽丰田"
-    }, {
-      "id": 13,
-      "carBand": "广汽三菱"
-    }, {
-      "id": 17,
-      "carBand": "广汽本田"
-    }, {
-      "id": 37,
-      "carBand": "广汽传祺"
-    }, {
-      "id": 39,
-      "carBand": "观致"
-    }]
-  }, {
-    "pinYin": "H",
-    "carBand": [{
-      "id": 38,
-      "carBand": "红旗"
-    }]
-  }, {
-    "pinYin": "J",
-    "carBand": [{
-      "id": 43,
-      "carBand": "Jeep"
-    }, {
-      "id": 52,
-      "carBand": "捷豹"
-    }]
-  }, {
-    "pinYin": "K",
-    "carBand": [{
-      "id": 44,
-      "carBand": "克莱斯勒"
-    }, {
-      "id": 45,
-      "carBand": "凯迪拉克"
+    "cityData": [{
+      "id": 91,
+      "cityName": "广州市"
     }]
   }, {
     "pinYin": "L",
-    "carBand": [{
-      "id": 20,
-      "carBand": "雷克萨斯"
-    }, {
-      "id": 48,
-      "carBand": "雷诺"
-    }, {
-      "id": 51,
-      "carBand": "路虎"
-    }]
-  }, {
-    "pinYin": "M",
-    "carBand": [{
-      "id": 7,
-      "carBand": "MINI"
+    "cityData": [{
+      "id": 187,
+      "cityName": "龙岩市"
     }]
   }, {
     "pinYin": "N",
-    "carBand": [{
-      "id": 32,
-      "carBand": "纳智捷"
+    "cityData": [{
+      "id": 208,
+      "cityName": "南平市"
+    }, {
+      "id": 213,
+      "cityName": "宁德市"
     }]
   }, {
-    "pinYin": "O",
-    "carBand": [{
-      "id": 24,
-      "carBand": "讴歌"
+    "pinYin": "P",
+    "cityData": [{
+      "id": 222,
+      "cityName": "莆田市"
     }]
   }, {
     "pinYin": "Q",
-    "carBand": [{
-      "id": 21,
-      "carBand": "起亚（进口）"
-    }, {
-      "id": 30,
-      "carBand": "奇瑞"
+    "cityData": [{
+      "id": 239,
+      "cityName": "泉州市"
     }]
   }, {
     "pinYin": "S",
-    "carBand": [{
-      "id": 1,
-      "carBand": "上海大众"
+    "cityData": [{
+      "id": 243,
+      "cityName": "三明市"
     }, {
-      "id": 3,
-      "carBand": "斯柯达"
+      "id": 250,
+      "cityName": "上海市"
     }, {
-      "id": 6,
-      "carBand": "smart"
-    }, {
-      "id": 12,
-      "carBand": "斯巴鲁"
-    }, {
-      "id": 35,
-      "carBand": "上汽荣威"
+      "id": 255,
+      "cityName": "深圳市"
     }]
   }, {
     "pinYin": "T",
-    "carBand": [{
-      "id": 40,
-      "carBand": "通用雪佛兰"
-    }, {
-      "id": 46,
-      "carBand": "通用别克"
+    "cityData": [{
+      "id": 287,
+      "cityName": "天津市"
     }]
   }, {
-    "pinYin": "W",
-    "carBand": [{
-      "id": 28,
-      "carBand": "五菱"
-    }, {
-      "id": 50,
-      "carBand": "沃尔沃"
-    }]
-  }, {
-    "pinYin": "Y",
-    "carBand": [{
-      "id": 2,
-      "carBand": "一汽奥迪"
-    }, {
-      "id": 8,
-      "carBand": "一汽-大众"
-    }, {
-      "id": 16,
-      "carBand": "一汽马自达"
-    }, {
-      "id": 22,
-      "carBand": "一汽丰田"
+    "pinYin": "X",
+    "cityData": [{
+      "id": 322,
+      "cityName": "厦门市"
     }]
   }, {
     "pinYin": "Z",
-    "carBand": [{
-      "id": 25,
-      "carBand": "郑州日产"
+    "cityData": [{
+      "id": 375,
+      "cityName": "漳州市"
     }]
   }]
 }

@@ -62,13 +62,13 @@ $(function() {
   }
   // 热门车型
   function hotCar(callback) {
-    callback(_test);
+    callback(_test);//测试数据
     /*$.ajax({
       type: 'get',
       data: defaultOptions,
       url: ApiUrl+'tuan/List',
       success: function(data) {
-        if (!!callback && typeof callback == 'function') {
+        if (!!callback && typeof callback == 'function' && data.Code == 1) {
           callback(data);
         }
       }
@@ -77,13 +77,13 @@ $(function() {
 
   // 热门品牌
   function hotBrand(callback) {
-    callback(_test_brand);
+    callback(_test_brand);//测试数据
     /*$.ajax({
       type: 'get',
       data: defaultOptions,
       url: ApiUrl+'tuan/CarBandList',
       success: function(data) {
-        if (!!callback && typeof callback == 'function') {
+        if (!!callback && typeof callback == 'function' && data.Code == 1) {
           callback(data);
         }
       }
