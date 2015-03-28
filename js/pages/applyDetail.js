@@ -16,7 +16,6 @@ $(function() {
 
 	//绑定事件
 	function BindEvent() {
-		var re = /^1\d{10}$/;
 		$('#apply').on('click', function() {
 			if ($('#brand').val() == '') {
 				alert('请选择品牌');

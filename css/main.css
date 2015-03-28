@@ -17,6 +17,7 @@ body img { width: 100%;}
 .header .logBar i { font-size: 18px; padding-right: 10px; }
 
 .header #logo,#reply { width: 30%;}
+.header #logo img {height: 100%; width: auto;}
 .header #reply a {color: white;}
 .header #reply i { font-size: 2em;}
 .header .logo-icon { font-size: 16px;padding-right: 4px; position: relative;}
@@ -242,8 +243,8 @@ br.clearfix { height: 0; clear: both; line-height: 0;}
 	border: 1px solid #c7cdd9; resize: none; width: 100%;
 }
 
-.record-title { clear:both; padding: 6px 0; font-size: 14px;}
-.record-row { clear:both; padding-bottom: 6px;}
+.record-title { clear:both; padding: 6px 0; font-size: 14px; border-bottom:1px dotted #c7cdd9;}
+.record-row { clear:both; padding-bottom: 6px; border-bottom:1px dotted #c7cdd9; border-bottom:1px dotted #c7cdd9;}
 .record-row p { padding:2px 0px;}
 
 .leftCloumn { float:left;}
@@ -264,6 +265,7 @@ br.clearfix { height: 0; clear: both; line-height: 0;}
     background: #fff;
 }
 .pb10 {padding-bottom: 5px;}
+.pt10 {padding-top: 10px;}
 .fontB { font-weight: bold;}
 .fontC1 { color:#145fd7;}
 .fontS1 { font-size: 14px;}

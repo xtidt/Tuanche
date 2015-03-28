@@ -1,7 +1,6 @@
 $(function() {
+	var id = null;
 	pageInit();
-	var component1, component2;
-
 	function pageInit() {
 		// ajax
 		loadData();
@@ -17,7 +16,7 @@ $(function() {
 	//绑定事件
 	function BindEvent() {
 		var re = /^1\d{10}$/;
-		$('#apply').on('click', function() {
+		$('#submitBtn').on('click', function() {
 			if ($('#brand').val() == '') {
 				alert('请选择品牌');
 				return false;
@@ -26,33 +25,35 @@ $(function() {
 				alert('请选择车型');
 				return false;
 			}
-			if ($('#name').val() == '') {
-				alert('请输入姓名');
-				return false;
-			}
-			if ($('#mobile').val() == '' || !re.test($('#mobile').val())) {
-				alert('请输入正确的手机号码');
+			if ($('#modelnumb').val() == '') {
+				alert('请选择型号');
 				return false;
 			}
 
 			var postData = {
-				tuanId: 0,
-				carId: $('#carmodel').val(),
-				tel: $('#mobile').val(),
-				name: $('#name').val()
+				carId: $('#modelnumb').val()
 			}
 
-			$.ajax({
+			window.location.href = './result.html?carId='+postData.carId;
+			/*$.ajax({
 				type: 'get',
 				data: postData,
-				url: ApiUrl + 'SignUp/Add',
+				url: ApiUrl + 'CarModel/GetByCarId',
 				success: function(data) {
 					if (!!callback && typeof callback == 'function' && data.Code == 1) {
-						alert('报名成功');
+						alert('');
 					}
 				}
-			});
+			});*/
 		})
+
+		$('#brand').change(function() {
+			loadCar($('#brand').val(), drawCarList);
+		});
+
+		$('#carmodel').change(function() {
+			loadModelnumb($('#carmodel').val(), drawModelnumbList);
+		});
 	}
 
 	//品牌选取
@@ -67,12 +68,6 @@ $(function() {
 			}
 
 		}
-
-		$('#brand').change(function() {
-			loadCar($(this).val(), drawCarList);
-		});
-
-		// $('#js-hot-car').empty().html(htmlStr);
 	}
 
 	//车型选取
@@ -86,6 +81,18 @@ $(function() {
 			$('#carmodel').append(htmlStr);
 		}
 		// $('#carmodel').trigger("chosen:updated");
+	}
+
+	//型号选取
+	function drawModelnumbList() {
+		if (arguments.length == 0) return false;
+		var _data = arguments[0].Data;
+		$('#modelnumb').html('<option value="">请选择</option>');
+		for (var i = 0, len = _data.length; i < len; i++) {
+			var htmlStr = '';
+			htmlStr += '<option value="' + _data[i].id + '">' + _data[i].name + '</option>';
+			$('#modelnumb').append(htmlStr);
+		}
 	}
 
 	//加载品牌
@@ -117,6 +124,22 @@ $(function() {
 				}
 			}
 		});*/
+	}
+	//加载型号
+	function loadModelnumb(carmodelId,callback){
+		callback(testCar); //测试数据
+		$.ajax({
+			type: 'get',
+			data: {
+				bandId: carmodelId
+			},
+			url: ApiUrl + 'CarModel/GetByCarId',
+			success: function(data) {
+				if (!!callback && typeof callback == 'function' && data.Code == 1) {
+					callback(data);
+				}
+			}
+		});
 	}
 })
 
@@ -384,4 +407,22 @@ var testCar = {
 		"id": 48,
 		"name": "宝马4系"
 	}]
+}
+
+var testSearch = {
+   "Code"        : 1,
+   "Data"        : [
+      {
+         "id"          : 1,
+         "carId"       : 1,
+         "modelName"   : "途观2012 自动挡",
+         "naked"       : "20.3w（优惠2w）",
+         "purchaseTax" : "12000",
+         "card"        : "800",
+         "insurance"   : "7000",
+         "allPrice"    : "21w",
+         "createTime"  : "\/Date(1426224127353)\/",
+         "status"      : 1
+      }
+   ]
 }

@@ -5,3 +5,17 @@ var CityId = 1;//泉州
 function gotoUrl(url){
 	window.location.href = url;
 }
+
+$.hash = {
+	getUrlParam : function (name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+}
+
+$.errorEvent = function(){
+	alert('服务器请求失败');
+}
+//正则表达式
+var re = /^1\d{10}$/;

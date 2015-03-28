@@ -6,8 +6,8 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
   <title>团购报名</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <meta name="keywords" content="【城市名称】汽车团购，汽车团购，【城市名称】汽车团购网" />
+  <meta name="description" content="【城市名称】汽车团购，永远免费为【城市名称】车友提供最专业的汽车团购服务，用最优惠价格购买优质汽车。热线：0596-86868738." />
   <!-- style -->
   <link rel="stylesheet" href="css/ionic.min.css"/>
   <link rel="stylesheet" href="css/ionicons.min.css"/>
@@ -17,7 +17,7 @@
 <body>
 <!--头部-->
 <section class="header bar bar-header bar-positive">
-    <ul id="logo"><i class="ion-happy-outline logo-icon"></i>优优买车</ul>
+    <ul id="logo"><img src="img/logo.jpg" /></ul>
   <ul class="topHeader">汽车团购-泉州站</ul>
   <ul class="logBar"><i class="ion-person"></i></ul>
 </section>
@@ -26,11 +26,9 @@
 <div class="advertisement paddingT44"><img src="img/ad3.jpg" /></div>
 <section class="content">
     <article>
-        <p>
-            <dd class="leftCloumn"><span class="fontC1 fontB">147人</span>已报名</dd>
-            <dd class="rightCloumn">团购日期：<span class="fontC1 fontB">3月7日</span>（周六）</dd>
-        </p>
-        <p class="rightCloumn textR">平均帮每位团员再节省：<span class="fontC1 fontB">2000+元</span></p>
+        <dd class="leftCloumn"><span class="fontC1 fontB">147人</span>已报名</dd>
+        <dd class="rightCloumn">团购日期：<span class="fontC1 fontB">3月7日</span>（周六）</dd>
+        <p class="rightCloumn textR pt10">平均帮每位团员再节省：<span class="fontC1 fontB">2000+元</span></p>
         <br class="clearfix">        
     </article>
     <div id="regiment">
@@ -54,7 +52,7 @@
                 <tr>
                     <td>车型：</td>
                     <td>
-                        <select name="brand" id="brand">
+                        <select name="carmodel" id="carmodel">
                             <option value="">请选择</option>
                         </select>
                     </td>
@@ -63,19 +61,19 @@
                 <tr>
                     <td>姓名：</td>
                     <td>
-                        <input type="text" placeholder="请输入姓名">
+                        <input id="name" type="text" placeholder="请输入姓名">
                     </td>
                 </tr>
 
                 <tr>
                     <td>手机：</td>
                     <td>
-                        <input type="text" placeholder="请输入手机号">
+                        <input id="mobile" type="text" maxlength="11" placeholder="请输入手机号">
                     </td>
                 </tr>
             </table>
         </form>
-        <button class="button button-positive marginT20 marginA">完成报名</button>
+        <button id="apply" class="button button-positive marginT20 marginA">完成报名</button>
 
         <div class="index-title">
             <h4>
@@ -103,9 +101,8 @@
   <ul>优优买车服务有限公司经营许可证：<br>闽ICP证130329 2015 翻版必究 <br> 闽ICP备 1201456号-3</ul>
 </footer>
 
-<!-- script -->
-<!--<script src="js/require.config.js"></script>-->
-<!--<script src="js/require/require-min.js"></script>-->
-<!--<script src="js/main.js"></script>-->
+<script src="js/jquery/jquery-2.1.3.min.js"></script>
+<script src="./js/pages/common.js"></script>
+<script src="./js/pages/applyDetail.js"></script>
 </body>
 </html>

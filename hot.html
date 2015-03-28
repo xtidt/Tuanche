@@ -5,9 +5,9 @@
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-  <title>热门团购</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>首页</title>
+  <meta name="keywords" content="【城市名称】汽车团购，汽车团购，【城市名称】汽车团购网" />
+  <meta name="description" content="【城市名称】汽车团购，永远免费为【城市名称】车友提供最专业的汽车团购服务，用最优惠价格购买优质汽车。热线：0596-86868738." />
   <!-- style -->
   <link rel="stylesheet" href="css/ionic.min.css"/>
   <link rel="stylesheet" href="css/ionicons.min.css"/>
@@ -17,8 +17,8 @@
 <body>
 <!--头部-->
 <section class="header bar bar-header bar-positive">
-  <ul id="logo"><i class="ion-happy-outline logo-icon"></i>优优买车</ul>
-  <ul class="topHeader">泉州<i class="ion-arrow-down-b arrow-down"></i></ul>
+  <ul id="logo"><img src="img/logo.jpg" /></ul>
+  <ul class="topHeader"><a href="city.html">泉州<i class="ion-arrow-down-b arrow-down"></i></a></ul>
   <ul class="logBar"><i class="ion-person"></i></ul>
 </section>
 
@@ -32,123 +32,23 @@
     </article>
 </section>
 
+<!--导航-->
+<nav class="nav bar-tabs">
+    <li><i class="nav-icon ion-person-add"></i><br>团购报名</li>
+    <li><i class="nav-icon ion-ios-cart"></i><br>热门团购</li>
+    <li><i class="nav-icon ion-ios-search-strong"></i><br>报价查询</li>
+    <li><i class="nav-icon ion-clipboard"></i><br>问题与建议</li>
+    <br class="clearfix">
+</nav>
+
 <!-- 主体内容 -->
 <section class="content">
-  <!--热门车型-->
-  <div class="index-title">
-    <h4>为什么选择优优买车</h4>
-  </div>
-
-  <!-- swiper -->
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <ul class="slideCell">
-            <div class="slide_item_wrap">
-                <i class="ico ion-person-add" style="color:#43CEE6"></i>
-                <h2>免费报名</h2>
-                <h2>免费报名内容内容免费报名内容内容免费报名内容内容免费报名内容内容</h2>
-            </div>
-        </ul>
-      </div>
-      <div class="swiper-slide">
-        <ul class="slideCell">
-            <div class="slide_item_wrap">
-                <i class="ico ion-model-s"></i>
-                <h2>4S店看车</h2>
-                <h2>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内</h2>
-            </div>
-        </ul>
-      </div>
-      <div class="swiper-slide">
-        <ul class="slideCell">
-            <div class="slide_item_wrap">
-                <i class="ico ion-card" style="color:#6C3"></i>
-                <h2>最低价买车</h2>
-                <h2>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内</h2>
-            </div>
-        </ul>
-      </div>
-      <div class="swiper-slide">
-        <ul class="slideCell">
-            <div class="slide_item_wrap">
-                <i class="ico ion-android-hand" style="color:#F0B840"></i>
-                <h2>随时可退订</h2>
-                <h2>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内</h2>
-            </div>
-        </ul>
-      </div>
-    </div>
- 
-    <div class="swiper-pagination"></div>
-  </div>
-
   <!--热门车型-->
   <div class="index-title">
     <h4>热门车型</h4>
   </div>
   <div class="list">
-    <ul>
-      <li>
-        <a href="#">
-          <img src="img/index_list_img1.jpg">
-          <div>
-            <p>新奇骏</p>
-            <p class="many-buy"> <strong class="fc-orange">87</strong>
-              人已报名
-            </p>
-          </div>
-        </a>
-      </li>
-
-      <li>
-        <a href="#">
-          <img src="img/index_list_img1.jpg">
-          <div>
-            <p>新奇骏</p>
-            <p class="many-buy"> <strong class="fc-orange">87</strong>
-              人已报名
-            </p>
-          </div>
-        </a>
-      </li>
-
-      <li>
-        <a href="#">
-          <img src="img/index_list_img1.jpg">
-          <div>
-            <p>新奇骏</p>
-            <p class="many-buy"> <strong class="fc-orange">87</strong>
-              人已报名
-            </p>
-          </div>
-        </a>
-      </li>
-
-      <li>
-        <a href="#">
-          <img src="img/index_list_img1.jpg">
-          <div>
-            <p>新奇骏</p>
-            <p class="many-buy"> <strong class="fc-orange">87</strong>
-              人已报名
-            </p>
-          </div>
-        </a>
-      </li>
-
-      <li>
-        <a href="#">
-          <img src="img/index_list_img1.jpg">
-          <div>
-            <p>新奇骏</p>
-            <p class="many-buy"> <strong class="fc-orange">87</strong>
-              人已报名
-            </p>
-          </div>
-        </a>
-      </li>
-    </ul>
+    <ul id="js-hot-car"></ul>
   </div>
 
   <!--热门品牌-->
@@ -156,78 +56,7 @@
     <h4>热门品牌</h4>
   </div>
   <div class="brand-list">
-    <ul>        
-      <li>
-        <a href="/bj/b2/tuan">
-          <img src="img/pic/a1.jpg" alt="上海大众" onerror="javascript:this.src='/images/error.jpg'">
-          <p>上海大众</p>
-        </a>
-      </li>
-
-      <li>
-        <a href="/bj/b38/tuan">
-          <img src="img/pic/a3.jpg" alt="华晨中华" onerror="javascript:this.src='/images/error.jpg'">
-          <p>华晨中华</p>
-        </a>
-      </li>
-
-      <li>
-        <a href="/bj/b32/tuan">
-          <img src="img/pic/a5.jpg" alt="宝马" onerror="javascript:this.src='/images/error.jpg'">
-          <p>宝马</p>
-        </a>
-      </li>
-
-      <li>
-        <a href="/bj/b45/tuan">
-          <img src="img/pic/a2.jpg" alt="英菲尼迪" onerror="javascript:this.src='/images/error.jpg'">
-          <p>英菲尼迪</p>
-        </a>
-      </li>
-
-      <li>
-        <a href="/bj/b27/tuan">
-          <img src="img/pic/a7.jpg" alt="奇瑞" onerror="javascript:this.src='/images/error.jpg'">
-          <p>奇瑞</p>
-        </a>
-      </li>
-
-      <li>
-        <a href="/bj/b5/tuan">
-          <img src="img/pic/a9.jpg" alt="北京现代" onerror="javascript:this.src='/images/error.jpg'">
-          <p>北京现代</p>
-        </a>
-      </li>
-
-      <li>
-        <a href="/bj/b3/tuan">
-          <img src="img/pic/a10.jpg" alt="东风日产" onerror="javascript:this.src='/images/error.jpg'">
-          <p>东风日产</p>
-        </a>
-      </li>
-
-      <li>
-        <a href="/bj/b10/tuan">
-          <img src="img/pic/a8.jpg" alt="通用雪佛兰" onerror="javascript:this.src='/images/error.jpg'">
-          <p>通用雪佛兰</p>
-        </a>
-      </li>
-
-      <li>
-        <a href="/bj/b33/tuan">
-          <img src="img/pic/a4.jpg" alt="北京奔驰" onerror="javascript:this.src='/images/error.jpg'">
-          <p>北京奔驰</p>
-        </a>
-      </li>
-
-      <li>
-        <a href="/bj/b31/tuan">
-          <img src="img/pic/a6.jpg" alt="一汽奥迪" onerror="javascript:this.src='/images/error.jpg'">
-          <p>一汽奥迪</p>
-        </a>
-      </li>
-      <br class="clearfix">
-    </ul>
+    <ul id="js-hot-brand" class="clearfix"></ul>
   </div>
 </section>
 <!-- 尾部 -->
@@ -236,22 +65,9 @@
   <ul>优优买车服务有限公司经营许可证：<br>闽ICP证130329 2015 翻版必究 <br> 闽ICP备 1201456号-3</ul>
 </footer>
 
+<script src="js/jquery/jquery-2.1.3.min.js"></script>
 <script src="js/swiper/swiper.min.js"></script>
-<script>
-    var swiper = new Swiper('.swiper-container', {
-        pagination: '.swiper-pagination',
-        paginationClickable: true,
-        spaceBetween: 30
-    });
-</script>
-<script src="js/zepto/zepto.min.js"></script>
-<script>
-  function pageLoad(){
-    var h = $('.ad img').height();
-    $('.ad').height(h+44);
-  }
-
-  pageLoad();
-</script>
+<script src="js/pages/common.js"></script>
+<script src="js/pages/hot.js"></script>
 </body>
 </html>
