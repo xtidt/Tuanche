@@ -46,7 +46,7 @@
                 <tr>
                     <td>车型：</td>
                     <td>
-                        <select name="brand" id="brand">
+                        <select name="carmodel" id="carmodel">
                             <option value="">请选择</option>
                         </select>
                     </td>
@@ -55,19 +55,19 @@
                 <tr>
                     <td>姓名：</td>
                     <td>
-                        <input type="text" placeholder="请输入姓名">
+                        <input id="name" type="text" placeholder="请输入姓名">
                     </td>
                 </tr>
 
                 <tr>
                     <td>手机：</td>
                     <td>
-                        <input type="text" placeholder="请输入手机号">
+                        <input id="mobile" maxlength="11" type="text" placeholder="请输入手机号">
                     </td>
                 </tr>
             </table>
         </form>
-        <button class="button button-positive marginT20 marginA">完成报名</button>
+        <button id="apply" class="button button-positive marginT20 marginA">完成报名</button>
 
         <div class="index-title">
             <h4>
@@ -94,5 +94,10 @@
   <div class="hot-line fsize1">客服电话：400-6969-123</div>
   <ul>优优买车服务有限公司经营许可证：<br>闽ICP证130329 2015 翻版必究 <br> 闽ICP备 1201456号-3</ul>
 </footer>
+
+<script src="./js/jquery/jquery-1.10.2.min.js"></script>
+<!-- <script src="./js/chosen/chosen.jquery.min.js"></script> -->
+<script src="./js/pages/common.js"></script>
+<script src="./js/pages/regiment.js"></script>
 </body>
 </html>
