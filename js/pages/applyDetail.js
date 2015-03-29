@@ -11,7 +11,23 @@ $(function() {
 
 	// ajax数据
 	function loadData() {
-		loadBrand(drawBrand)
+		loadBrand(drawBrand);
+		loadInfo(); //加载团购基本信息
+	}
+
+	function loadInfo() {
+		$.ajax({
+			type: 'get',
+			data: {
+				tuanId : tuanId
+			},
+			url: ApiUrl + 'tuan/Get',
+			success: function(data) {
+				if (!!callback && typeof callback == 'function' && data.Code == 1) {
+					callback(data);
+				}
+			}
+		});
 	}
 
 	//绑定事件

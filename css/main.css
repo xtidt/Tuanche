@@ -30,7 +30,6 @@ br.clearfix { height: 0; clear: both; line-height: 0;}
 .ad {
     padding-top: 44px;
     border-color: #145fd7;
-    background-color: #4a87ee;
 }
 .ad article {
     position: absolute;
@@ -41,10 +40,15 @@ br.clearfix { height: 0; clear: both; line-height: 0;}
 
 .ad article p {text-align: center; color: #fff; font-size: 1.2em;}
 /*导航*/
-.nav { padding:0; margin:0; clear: both; background-color: #4a87ee;}
+.nav { 
+	padding:0; margin:0; clear: both; background-color: #4a87ee;
+	position: relative;
+	top: -5px;
+}
 .nav li { list-style: none; float: left;; width:25%; text-align: center; margin:10px 0px;
     border-right:1px solid #fff; color:#fff; }
 .nav li:nth-of-type(4) { border: none;}
+.nav li a { display: block; text-decoration: none; color:#fff;}
 .nav-icon { color:#fff; font-size: 28px;}
 
 /*面包屑*/

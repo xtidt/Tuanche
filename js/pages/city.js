@@ -33,13 +33,29 @@ $(function() {
         <ul class="row groups">';
 
         for(var j=0; j<_data[i].cityData.length; j++){
-          htmlStr += '<li onclick="gotoUrl(\'#'+ _data[i].cityData[j].id +'\')">'+ _data[i].cityData[j].cityName +'</li>';
+          htmlStr += '<li data-id="'+ _data[i].cityData[j].id +'">'+ _data[i].cityData[j].cityName +'</li>';
         }
             
       htmlStr += '</ul>';
     }
 
     $('#js-city-select').html(htmlStr);
+
+    BindEvent();
+  }
+
+  //绑定事件
+  function BindEvent(){
+    $('#js-city-select .row.groups li').each(function(i, item){
+        $(this).on('click',function(){
+          var tempId = $(this).attr('data-id');
+          var tempName = $(this).text();
+          $.cookie('CityId', tempId);
+          $.cookie('CityName', tempName);
+
+          window.location.href = 'index.html';
+        })
+    })
   }
 
   pageInit();

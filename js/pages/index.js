@@ -24,7 +24,7 @@ $(function() {
     var htmlStr = '';
     for (var i = 0, len = _data.length; i < len; i++) {
       htmlStr += '<li data-info="{id:'+_data[i].id+',carId:'+_data[i].carId+'}">\
-        <a href="#">\
+        <a href="applyDetail.html?carId='+_data[i].carId+'" >\
           <img src="' + _data[i].picUrl + '">\
           <div>\
             <p>' + _data[i].name + '</p>\
