@@ -8,34 +8,34 @@ $(function() {
     loadCity(drawList);
   }
 
-  function loadCity(callback){
-    callback(testData);//测试数据
-    /*$.ajax({
+  function loadCity(callback) {
+    // callback(testData);//测试数据
+    $.ajax({
       type: 'get',
       url: ApiUrl + 'City/CityList',
       success: function(data) {
-        if (!!callback && typeof callback == 'function' && data.Code == 1)
+        if (!!callback && typeof callback == 'function' && data.Code == 1) {
           callback(data);
         }
       }
-    });*/
+    });
   }
 
   //绘制列表
-  function drawList(){
+  function drawList() {
     if (arguments.length == 0) return false;
     var _data = arguments[0].Data;
     var htmlStr = '';
     for (var i = 0, len = _data.length; i < len; i++) {
       htmlStr += '<ul class="row">\
-            <h3>'+ _data[i].pinYin +'</h3>\
+            <h3>' + _data[i].pinYin + '</h3>\
         </ul>\
         <ul class="row groups">';
 
-        for(var j=0; j<_data[i].cityData.length; j++){
-          htmlStr += '<li data-id="'+ _data[i].cityData[j].id +'">'+ _data[i].cityData[j].cityName +'</li>';
-        }
-            
+      for (var j = 0; j < _data[i].cityData.length; j++) {
+        htmlStr += '<li data-id="' + _data[i].cityData[j].id + '">' + _data[i].cityData[j].cityName + '</li>';
+      }
+
       htmlStr += '</ul>';
     }
 
@@ -45,16 +45,16 @@ $(function() {
   }
 
   //绑定事件
-  function BindEvent(){
-    $('#js-city-select .row.groups li').each(function(i, item){
-        $(this).on('click',function(){
-          var tempId = $(this).attr('data-id');
-          var tempName = $(this).text();
-          $.cookie('CityId', tempId);
-          $.cookie('CityName', tempName);
+  function BindEvent() {
+    $('#js-city-select .row.groups li').each(function(i, item) {
+      $(this).on('click', function() {
+        var tempId = $(this).attr('data-id');
+        var tempName = $(this).text();
+        $.cookie('CityId', tempId);
+        $.cookie('CityName', tempName);
 
-          window.location.href = 'index.html';
-        })
+        window.location.href = 'index.html';
+      })
     })
   }
 

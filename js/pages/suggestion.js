@@ -5,12 +5,12 @@ $(function() {
 
 	function BindEvent() {
 		$('#submitBtn').on('click', function() {
-			if ($('#suggestion').val() == '') {
+			if ($('#suggestion').val().trim() == '') {
 				alert('请输入内容');
 				return false;
 			}
 
-			if ($('#qq').val() == '') {
+			if ($('#qq').val().trim() == '') {
 				alert('请输入QQ号码');
 				return false;
 			}
@@ -25,7 +25,7 @@ $(function() {
 				type: 'get',
 				url: ApiUrl + 'Suggestion/Add',
 				data: postData,
-				succuess: function(data) {
+				success: function(data) {
 					if (data.Code == 1) {
 						alert('提交成功');
 					}

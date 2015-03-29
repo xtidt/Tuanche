@@ -19,8 +19,8 @@ $(function() {
 
 	// ajax数据
 	function loadData() {
-		drawList(testData);//测试数据
-		/*$.ajax({
+		// drawList(testData);//测试数据
+		$.ajax({
 			type:'get',
 			url: ApiUrl + 'CarModel/GetByCarId',
 			data:{
@@ -32,7 +32,7 @@ $(function() {
 			error:function(xhr){
 				$.errorEvent();
 			}
-		})*/
+		})
 
 		//交易记录
 		loadHistory();
@@ -46,9 +46,9 @@ $(function() {
 			cityId : cityId
 		}
 
-		historyList(testData2.Data);//测试数据
+		// historyList(testData2.Data);//测试数据
 
-		/*$.ajax({
+		$.ajax({
 			type:'get',
 			url: ApiUrl + 'Price/ListByCarModelId',
 			data:postData,
@@ -60,7 +60,7 @@ $(function() {
 			error:function(xhr){
 				$.errorEvent();
 			}
-		})*/
+		})
 	}
 
 	//绘制数据

@@ -47,9 +47,7 @@ $(function() {
 				data: postData,
 				url: ApiUrl + 'SignUp/Add',
 				success: function(data) {
-					if (!!callback && typeof callback == 'function' && data.Code == 1) {
 						alert('报名成功');
-					}
 				}
 			});
 		})
@@ -79,7 +77,7 @@ $(function() {
 	function drawCarList() {
 		if (arguments.length == 0) return false;
 		var _data = arguments[0].Data;
-		$('#carmodel').html('<option value="">请选择</option>');
+		$('#carmodel').html('');
 		for (var i = 0, len = _data.length; i < len; i++) {
 			var htmlStr = '';
 			htmlStr += '<option value="' + _data[i].id + '">' + _data[i].name + '</option>';
@@ -90,8 +88,8 @@ $(function() {
 
 	//加载品牌
 	function loadBrand(callback) {
-			callback(testDataBrand); //测试数据
-			/*$.ajax({
+			// callback(testDataBrand); //测试数据
+			$.ajax({
 				type: 'get',
 				data: {},
 				url: ApiUrl + 'Car/CarBandList',
@@ -100,12 +98,12 @@ $(function() {
 						callback(data);
 					}
 				}
-			});*/
+			});
 		}
 		//加载车型
 	function loadCar(brandId, callback) {
-		callback(testCar); //测试数据
-		/*$.ajax({
+		// callback(testCar); //测试数据
+		$.ajax({
 			type: 'get',
 			data: {
 				bandId: brandId
@@ -116,7 +114,7 @@ $(function() {
 					callback(data);
 				}
 			}
-		});*/
+		});
 	}
 })
 

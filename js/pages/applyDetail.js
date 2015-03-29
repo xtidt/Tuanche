@@ -1,6 +1,20 @@
 $(function() {
+	var tuanId = $.hash.getUrlParam("tuanId") || 0;
+	var carId = $.hash.getUrlParam("carId");
+	var carBandId = $.hash.getUrlParam("carBandId");
+	var type = null;
+	if (!carId && !!carBandId) {
+		type = 1; //热门品牌
+		$('#brand').closest('tr').hide();
+	}else if (!!carId && !carBandId) {
+		type = 2; //热门车型
+		$('#brand').closest('tr').hide();
+		$('#carmodel').closest('tr').hide();
+	}else{
+		type = 0;//默认
+	}
+
 	pageInit();
-	var component1, component2;
 
 	function pageInit() {
 		// ajax
@@ -12,16 +26,17 @@ $(function() {
 	// ajax数据
 	function loadData() {
 		loadBrand(drawBrand);
-		loadInfo(); //加载团购基本信息
+		loadInfo(drawInfo); //加载团购基本信息
 	}
 
-	function loadInfo() {
+	function loadInfo(callback) {
+		// callback(_testInfo);
 		$.ajax({
 			type: 'get',
 			data: {
-				tuanId : tuanId
+				carId : carId
 			},
-			url: ApiUrl + 'tuan/Get',
+			url: ApiUrl + 'tuan/GetByCarId',
 			success: function(data) {
 				if (!!callback && typeof callback == 'function' && data.Code == 1) {
 					callback(data);
@@ -30,10 +45,26 @@ $(function() {
 		});
 	}
 
+	function drawInfo(data) {
+		if (arguments.length == 0) return false;
+		var _data = arguments[0].Data;
+		$('#picUrl').html('<img src="' + _data.picUrl + '">');
+		$('#picUrl2').html('<img src="' + _data.picUrl + '">');
+		$('#signUpNum').text(_data.signUpNum);
+		$('#tuanTime').text(_data.tuanTime);
+	}
+
 	//绑定事件
 	function BindEvent() {
 		$('#apply').on('click', function() {
-			if ($('#brand').val() == '') {
+			if(type==1){
+				$('#brand').val(carBandId);
+			}else if(type==2){
+				$('#brand').val(carBandId);
+				$('#carmodel').val(carId);
+			}else{}
+
+			if (type!=2 && $('#brand').val() == '') {
 				alert('请选择品牌');
 				return false;
 			}
@@ -51,8 +82,8 @@ $(function() {
 			}
 
 			var postData = {
-				tuanId: 0,
-				carId: $('#carmodel').val(),
+				tuanId: tuanId,
+				carId: (type==2)? carId : $('#carmodel').val(),
 				tel: $('#mobile').val(),
 				name: $('#name').val()
 			}
@@ -62,9 +93,7 @@ $(function() {
 				data: postData,
 				url: ApiUrl + 'SignUp/Add',
 				success: function(data) {
-					if (!!callback && typeof callback == 'function' && data.Code == 1) {
-						alert('报名成功');
-					}
+					alert('报名成功');
 				}
 			});
 		})
@@ -87,6 +116,16 @@ $(function() {
 			loadCar($(this).val(), drawCarList);
 		});
 
+		//热门品牌进入
+		if(type == 1){
+			$('#brand').val(carBandId);
+			loadCar(carBandId, drawCarList);
+			$('#carmodel').on('change',function(){
+				carId = $(this).val();
+				loadInfo();
+			});
+		}
+
 		// $('#js-hot-car').empty().html(htmlStr);
 	}
 
@@ -105,8 +144,8 @@ $(function() {
 
 	//加载品牌
 	function loadBrand(callback) {
-			callback(testDataBrand); //测试数据
-			/*$.ajax({
+			// callback(testDataBrand); //测试数据
+			$.ajax({
 				type: 'get',
 				data: {},
 				url: ApiUrl + 'Car/CarBandList',
@@ -115,12 +154,12 @@ $(function() {
 						callback(data);
 					}
 				}
-			});*/
+			});
 		}
 		//加载车型
 	function loadCar(brandId, callback) {
-		callback(testCar); //测试数据
-		/*$.ajax({
+		// callback(testCar); //测试数据
+		$.ajax({
 			type: 'get',
 			data: {
 				bandId: brandId
@@ -131,7 +170,7 @@ $(function() {
 					callback(data);
 				}
 			}
-		});*/
+		});
 	}
 })
 
@@ -399,4 +438,25 @@ var testCar = {
 		"id": 48,
 		"name": "宝马4系"
 	}]
+}
+
+var _testInfo = {
+	"Code": 1,
+	"Data": {
+		"id": 1,
+		"cityId": 1,
+		"carId": 1,
+		"title": "泉州途观汽车团购",
+		"tuanTime": "\/Date(1422693394053)\/",
+		"price": "现场公布",
+		"signUpNum": 77,
+		"initNum": 0,
+		"createTime": "\/Date(1422088594110)\/",
+		"status": 1,
+		"hot": 0,
+		"carband": "上海大众",
+		"countryType": "德系",
+		"name": "途观",
+		"picUrl": "http://pic.tuanche.com/car/20141112/14157699579369115_pcb.jpg"
+	}
 }

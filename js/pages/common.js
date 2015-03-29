@@ -1,5 +1,5 @@
 // 当前的城市Id
-var ApiUrl = 'http://mobileapi.uumaiche.com/';
+var ApiUrl = 'http://m.uumaiche.com/';
 var CityId = $.cookie('CityId') || 1;//泉州
 var CityName = $.cookie('CityName') || '泉州';//泉州
 $.cookie('CityName', CityName);

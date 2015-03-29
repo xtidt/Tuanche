@@ -220,6 +220,7 @@ br.clearfix { height: 0; clear: both; line-height: 0;}
 
 .advertisement {
     width: 100%;
+    min-height: 300px;
 }
 
 .fillin-blank {}

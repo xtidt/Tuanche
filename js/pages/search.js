@@ -1,6 +1,7 @@
 $(function() {
 	var id = null;
 	pageInit();
+
 	function pageInit() {
 		// ajax
 		loadData();
@@ -34,7 +35,7 @@ $(function() {
 				carId: $('#modelnumb').val()
 			}
 
-			window.location.href = './result.html?carId='+postData.carId;
+			window.location.href = './result.html?carId=' + postData.carId;
 			/*$.ajax({
 				type: 'get',
 				data: postData,
@@ -48,10 +49,12 @@ $(function() {
 		})
 
 		$('#brand').change(function() {
+			$('#carmodel').empty();
 			loadCar($('#brand').val(), drawCarList);
 		});
 
 		$('#carmodel').change(function() {
+			$('#modelnumb').empty();
 			loadModelnumb($('#carmodel').val(), drawModelnumbList);
 		});
 	}
@@ -80,7 +83,6 @@ $(function() {
 			htmlStr += '<option value="' + _data[i].id + '">' + _data[i].name + '</option>';
 			$('#carmodel').append(htmlStr);
 		}
-		// $('#carmodel').trigger("chosen:updated");
 	}
 
 	//型号选取
@@ -90,15 +92,15 @@ $(function() {
 		$('#modelnumb').html('<option value="">请选择</option>');
 		for (var i = 0, len = _data.length; i < len; i++) {
 			var htmlStr = '';
-			htmlStr += '<option value="' + _data[i].id + '">' + _data[i].name + '</option>';
+			htmlStr += '<option value="' + _data[i].id + '">' + _data[i].modelName + '</option>';
 			$('#modelnumb').append(htmlStr);
 		}
 	}
 
 	//加载品牌
 	function loadBrand(callback) {
-			callback(testDataBrand); //测试数据
-			/*$.ajax({
+			// callback(testDataBrand); //测试数据
+			$.ajax({
 				type: 'get',
 				data: {},
 				url: ApiUrl + 'Car/CarBandList',
@@ -107,31 +109,31 @@ $(function() {
 						callback(data);
 					}
 				}
-			});*/
+			});
 		}
 		//加载车型
 	function loadCar(brandId, callback) {
-		callback(testCar); //测试数据
-		/*$.ajax({
-			type: 'get',
-			data: {
-				bandId: brandId
-			},
-			url: ApiUrl + 'Car/CarByBandId',
-			success: function(data) {
-				if (!!callback && typeof callback == 'function' && data.Code == 1) {
-					callback(data);
+			// callback(testCar); //测试数据
+			$.ajax({
+				type: 'get',
+				data: {
+					bandId: brandId
+				},
+				url: ApiUrl + 'Car/CarByBandId',
+				success: function(data) {
+					if (!!callback && typeof callback == 'function' && data.Code == 1) {
+						callback(data);
+					}
 				}
-			}
-		});*/
-	}
-	//加载型号
-	function loadModelnumb(carmodelId,callback){
-		callback(testCar); //测试数据
+			});
+		}
+		//加载型号
+	function loadModelnumb(carmodelId, callback) {
+		// callback(testSearch); //测试数据
 		$.ajax({
 			type: 'get',
 			data: {
-				bandId: carmodelId
+				carId: carmodelId
 			},
 			url: ApiUrl + 'CarModel/GetByCarId',
 			success: function(data) {
@@ -410,19 +412,127 @@ var testCar = {
 }
 
 var testSearch = {
-   "Code"        : 1,
-   "Data"        : [
-      {
-         "id"          : 1,
-         "carId"       : 1,
-         "modelName"   : "途观2012 自动挡",
-         "naked"       : "20.3w（优惠2w）",
-         "purchaseTax" : "12000",
-         "card"        : "800",
-         "insurance"   : "7000",
-         "allPrice"    : "21w",
-         "createTime"  : "\/Date(1426224127353)\/",
-         "status"      : 1
-      }
-   ]
+	"Code": 1,
+	"Data": [{
+		"id": 2,
+		"carId": 1,
+		"modelName": "2015款 1.4TSI 手动两驱蓝驱版",
+		"naked": "21w",
+		"purchaseTax": "13214",
+		"card": "120",
+		"insurance": "6900",
+		"allPrice": "23w",
+		"createTime": "\/Date(1426427636333)\/",
+		"status": 1
+	}, {
+		"id": 3,
+		"carId": 1,
+		"modelName": "2015款 1.8TSI 手动两驱风尚版",
+		"naked": "19.88w",
+		"purchaseTax": "13214",
+		"card": "120",
+		"insurance": "6900",
+		"allPrice": "19.98w",
+		"createTime": "\/Date(1426427727203)\/",
+		"status": 1
+	}, {
+		"id": 4,
+		"carId": 1,
+		"modelName": "2015款 1.8TSI 自动两驱风尚版",
+		"naked": "19.88w",
+		"purchaseTax": "13214",
+		"card": "120",
+		"insurance": "6900",
+		"allPrice": "21.08w",
+		"createTime": "\/Date(1426427746387)\/",
+		"status": 1
+	}, {
+		"id": 5,
+		"carId": 1,
+		"modelName": "2015款 1.8TSI 手动两驱限量版",
+		"naked": "19.88w",
+		"purchaseTax": "13214",
+		"card": "120",
+		"insurance": "6900",
+		"allPrice": "22.58w",
+		"createTime": "\/Date(1426427763233)\/",
+		"status": 1
+	}, {
+		"id": 6,
+		"carId": 1,
+		"modelName": "2015款 1.8TSI 自动两驱舒适版",
+		"naked": "19.88w",
+		"purchaseTax": "13214",
+		"card": "120",
+		"insurance": "6900",
+		"allPrice": "23.78w",
+		"createTime": "\/Date(1426427782033)\/",
+		"status": 1
+	}, {
+		"id": 7,
+		"carId": 1,
+		"modelName": "2015款 1.8TSI 自动两驱30周年纪念版",
+		"naked": "19.88w",
+		"purchaseTax": "13214",
+		"card": "120",
+		"insurance": "6900",
+		"allPrice": "25.38w",
+		"createTime": "\/Date(1426427793910)\/",
+		"status": 1
+	}, {
+		"id": 8,
+		"carId": 1,
+		"modelName": "2015款 1.8TSI 自动四驱舒适版",
+		"naked": "19.88w",
+		"purchaseTax": "13214",
+		"card": "120",
+		"insurance": "6900",
+		"allPrice": "25.48w",
+		"createTime": "\/Date(1426427805523)\/",
+		"status": 1
+	}, {
+		"id": 9,
+		"carId": 1,
+		"modelName": "2015款 1.8TSI 自动两驱豪华型",
+		"naked": "19.88w",
+		"purchaseTax": "13214",
+		"card": "120",
+		"insurance": "6900",
+		"allPrice": "25.98w",
+		"createTime": "\/Date(1426427817180)\/",
+		"status": 1
+	}, {
+		"id": 10,
+		"carId": 1,
+		"modelName": "2015款 1.8TSI 自动四驱豪华型",
+		"naked": "19.88w",
+		"purchaseTax": "13214",
+		"card": "120",
+		"insurance": "6900",
+		"allPrice": "27.68w",
+		"createTime": "\/Date(1426427830160)\/",
+		"status": 1
+	}, {
+		"id": 11,
+		"carId": 1,
+		"modelName": "2015款 2.0TSI 自动四驱豪华版",
+		"naked": "19.88w",
+		"purchaseTax": "13214",
+		"card": "120",
+		"insurance": "6900",
+		"allPrice": "29.08w",
+		"createTime": "\/Date(1426427853690)\/",
+		"status": 1
+	}, {
+		"id": 12,
+		"carId": 1,
+		"modelName": "2015款 2.0TSI 自动四驱旗舰版",
+		"naked": "19.88w",
+		"purchaseTax": "13214",
+		"card": "120",
+		"insurance": "6900",
+		"allPrice": "31.58w",
+		"createTime": "\/Date(1426427874410)\/",
+		"status": 1
+	}]
 }
