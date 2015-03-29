@@ -26,11 +26,28 @@ $(function() {
 			data:{
 				carId : carId
 			},
-			succuess:function(data){
+			success:function(data){
 				if(data.Data.length == 0){
-					alert('暂时无真实报价');
+					var tempData = {
+					   "Code"        : 1,
+					   "Data"        : [
+					      {
+					         "id"          : 1,
+					         "carId"       : 1,
+					         "modelName"   : '-',
+					         "naked"       : "暂时无真实报价",
+					         "purchaseTax" : "暂时无真实报价",
+					         "card"        : "暂时无真实报价",
+					         "insurance"   : "暂时无真实报价",
+					         "allPrice"    : "暂时无真实报价",
+					         "createTime"  : "-",
+					         "status"      : 1
+					      }
+					   ]
+					}
+					drawList(tempData);
 				}else{
-					drawList(data)
+					drawList(data);
 				}
 			},
 			error:function(xhr){
@@ -56,7 +73,7 @@ $(function() {
 			type:'get',
 			url: ApiUrl + 'Price/ListByCarModelId',
 			data:postData,
-			succuess:function(data){
+			success:function(data){
 				if(data.Code == 1){
 					historyList(data.Data);
 				}
@@ -131,6 +148,7 @@ $(function() {
 				url: ApiUrl + 'SignUp/Add',
 				success: function(data) {
 						alert('已成功报名，团长会尽快与您联系！');
+						window.location.href = 'index.html';
 				}
 			});
 		})

@@ -93,7 +93,8 @@ $(function() {
 				data: postData,
 				url: ApiUrl + 'SignUp/Add',
 				success: function(data) {
-					alert('报名成功');
+					alert('已报名成功，团长会尽快与您联系！');
+					window.location.href = 'index.html';
 				}
 			});
 		})

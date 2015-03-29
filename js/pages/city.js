@@ -52,8 +52,6 @@ $(function() {
         var tempName = $(this).text();
         $.cookie('CityId', tempId);
         $.cookie('CityName', tempName);
-
-        window.location.href = 'index.html';
       })
     })
   }
