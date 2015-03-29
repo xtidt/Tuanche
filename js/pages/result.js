@@ -27,7 +27,11 @@ $(function() {
 				carId : carId
 			},
 			succuess:function(data){
-				drawList(data)
+				if(data.Data.length == 0){
+					alert('暂时无真实报价');
+				}else{
+					drawList(data)
+				}
 			},
 			error:function(xhr){
 				$.errorEvent();
@@ -126,9 +130,7 @@ $(function() {
 				data: postData,
 				url: ApiUrl + 'SignUp/Add',
 				success: function(data) {
-					if (!!callback && typeof callback == 'function' && data.Code == 1) {
-						alert('报名成功');
-					}
+						alert('已成功报名，团长会尽快与您联系！');
 				}
 			});
 		})

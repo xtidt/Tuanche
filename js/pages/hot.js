@@ -6,11 +6,7 @@ $(function() {
   }
 
   function BindEvent() {
-    var swiper = new Swiper('.swiper-container', {
-      pagination: '.swiper-pagination',
-      paginationClickable: true,
-      spaceBetween: 30
-    });
+    
   }
 
   function loadData() {
@@ -23,8 +19,8 @@ $(function() {
     var _data = arguments[0].Data;
     var htmlStr = '';
     for (var i = 0, len = _data.length; i < len; i++) {
-      htmlStr += '<li data-info="{id:'+_data[i].id+',carId:'+_data[i].carId+'}">\
-        <a href="#">\
+      htmlStr += '<li data-info="{id:' + _data[i].id + ',carId:' + _data[i].carId + '}">\
+        <a href="applyDetail.html?tuanId=' + _data[i].id + '&carId=' + _data[i].carId + '" >\
           <img src="' + _data[i].picUrl + '">\
           <div>\
             <p>' + _data[i].name + '</p>\
@@ -45,9 +41,9 @@ $(function() {
     var htmlStr = '';
     for (var i = 0, len = _data.length; i < len; i++) {
       htmlStr += '<li>\
-        <a href="#'+ _data[i].id +'">\
-          <img src="'+ _data[i].picUrl +'" alt="'+ _data[i].carBand +'">\
-          <p>'+ _data[i].carBand +'</p>\
+        <a href="applyDetail.html?tuanId=0&carBandId=' + _data[i].id + '" >\
+          <img src="' + _data[i].picUrl + '" alt="' + _data[i].carBand + '">\
+          <p>' + _data[i].carBand + '</p>\
         </a>\
       </li>';
     }
@@ -56,13 +52,13 @@ $(function() {
   }
 
   var defaultOptions = {
-    pageIndex: 1,
-    pageSize: 10,
-    cityId: CityId
-  }
-  // 热门车型
+      pageIndex: 1,
+      pageSize: 10,
+      cityId: CityId
+    }
+    // 热门车型
   function hotCar(callback) {
-    // callback(_test);//测试数据
+    // callback(_test); //测试数据
     $.ajax({
       type: 'get',
       data: defaultOptions,
@@ -77,7 +73,7 @@ $(function() {
 
   // 热门品牌
   function hotBrand(callback) {
-    // callback(_test_brand);//测试数据
+    // callback(_test_brand); //测试数据
     $.ajax({
       type: 'get',
       data: defaultOptions,

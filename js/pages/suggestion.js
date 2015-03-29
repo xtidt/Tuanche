@@ -10,14 +10,10 @@ $(function() {
 				return false;
 			}
 
-			if ($('#qq').val().trim() == '') {
-				alert('请输入QQ号码');
-				return false;
-			}
-
+			var tempQQ = $('#qq').val() || null;
 			var postData = {
 				note : $('#suggestion').val(),
-				qq   : $('#qq').val(),
+				qq   : tempQQ,
 				source: 1
 			}
 
@@ -27,7 +23,8 @@ $(function() {
 				data: postData,
 				success: function(data) {
 					if (data.Code == 1) {
-						alert('提交成功');
+						alert('谢谢您的反馈！');
+						window.location.href = 'index.html';
 					}
 				},
 				error: function(xhr) {
