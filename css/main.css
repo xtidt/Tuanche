@@ -7,6 +7,10 @@ html, body, h1, h2, h3, h4, h5, h6, dl, dt, dd, ul, ol, li, th, td, p, blockquot
     list-style: none;
 }
 
+html,body {
+	overflow: scroll;
+}
+
 body img { width: 100%;}
 /*头部*/
 .header {}
@@ -17,7 +21,7 @@ body img { width: 100%;}
 .header .logBar i { font-size: 18px; padding-right: 10px; }
 
 .header #logo,#reply { width: 30%;}
-.header #logo img {height: 100%; width: auto;}
+.header #logo img {max-height: 30px;  width: auto;  padding-top: 5%; }
 .header #reply a {color: white;}
 .header #reply i { font-size: 2em;}
 .header .logo-icon { font-size: 16px;padding-right: 4px; position: relative;}
@@ -66,7 +70,7 @@ br.clearfix { height: 0; clear: both; line-height: 0;}
 .index-title {
 	border-bottom: 1px solid #c7cdd9;
 	text-align: center;
-	margin-bottom: 14px;
+	margin-bottom: 24px;
 }
 .index-title h4 { 
 	margin:0; padding:0; 
@@ -118,11 +122,11 @@ br.clearfix { height: 0; clear: both; line-height: 0;}
 .list {}
 .list ul { clear: both; }
 .list ul li {
+	background: url(../img/imgplaceholder.jpg)  center 30px no-repeat;
 	border-radius: 10px;
 	width: 48%;
 	float: left;
 	border: 1px solid #c7cdd9;
-	background: #ffffff;
 	padding: 0 6px 6px 8px;
 	height: 160px;
 	margin-right: 2%;
@@ -162,6 +166,8 @@ br.clearfix { height: 0; clear: both; line-height: 0;}
 	clear: both;
 }
 
+.slideCont { display: none;}
+
 .slide_item_wrap {
     position:relative;
     padding-left: 60px;
@@ -185,7 +191,7 @@ br.clearfix { height: 0; clear: both; line-height: 0;}
 .slide_item_wrap h2:last-child{
     font-weight:normal;
     height:60px;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .slide_item_wrap h2:nth-of-type(1){
@@ -217,10 +223,46 @@ br.clearfix { height: 0; clear: both; line-height: 0;}
 #regiment {
     padding:0;
 }
+.cloumn {
+	margin-left: -11px;
+	margin-right: -11px;
+	padding:10px 11px;
+	background: #f9f9f9;
+	border-top:1px solid #c7cdd9;
+	border-bottom:1px solid #c7cdd9;
+}
+
+.cloumn2 {
+	margin-left: -11px;
+	margin-right: -11px;
+	padding:10px 0px;
+}
+
+.cloumn3 {
+	margin-left: -11px;
+	margin-right: -11px;
+	padding:10px 28px;
+	background: #f9f9f9;
+	border-top:1px solid #c7cdd9;
+}
+
+.apply {
+	margin-left: -11px;
+	margin-right: -11px;
+	background: #f9f9f9;
+	padding:10px 12px;
+	border-top:1px solid #c7cdd9;
+	border-bottom:1px solid #c7cdd9;
+}
+
+#signUpNum,#tuanTime,.textStyle { font-size: 1.2em}
 
 .advertisement {
     width: 100%;
 }
+
+.clearfix:before {clear:both; content: '';}
+.clearfix:after {clear:both; content: '';}
 
 .fillin-blank {}
 .fillin-blank table {}
@@ -233,11 +275,13 @@ br.clearfix { height: 0; clear: both; line-height: 0;}
 
 /*问答*/
 .question {}
-.question h3 { font-size: 14px; font-weight: bold; padding-bottom: 8px;}
+.question h3 { font-size: 14px; font-weight: bold; padding-bottom: 8px; cursor: pointer;}
+.question h3:hover { color:#4a87ee; }
 .question p { font-size: 14px; padding: 0px 0; line-height: 28px;}
 
 /* 报价 */
 .detail-row { }
+.detail-row li{ padding-bottom: 6px; font-size: 1.1em; }
 
 /* 成交记录 */
 .bid-history {}
@@ -269,20 +313,22 @@ br.clearfix { height: 0; clear: both; line-height: 0;}
     background: #fff;
 }
 .pb10 {padding-bottom: 5px;}
+.pb11 {padding-bottom: 11px;}
 .pt10 {padding-top: 10px;}
 .fontB { font-weight: bold;}
 .fontC1 { color:#145fd7;}
-.fontS1 { font-size: 14px;}
+.fontS1 { font-size: 16px;}
 .border-s1 { border-bottom:1px dotted #c7cdd9;}
 .paddingS1 { padding:4px 0;}
+input {background: #f9f9f9;}
 
 footer {
-	padding-top: 10px;
+	padding-top: 4px;
 	background: #4a87ee;
 	color:#fff;
 }
 footer ul {
-	padding:0 0 20px 0;
+	padding:0 0 5px 0; font-size: 10px;
 }
 
 /*swpier*/
@@ -299,9 +345,9 @@ footer ul {
 
 /*public*/
 .textCenter { text-align: center;}
-.fc-orange { color:#cc2311;}
+.fc-orange { color:#cc2311; font-size: 1.2em;}
 .orange { color:orange;}
-.fsize1 { font-size: 1.4em; font-weight: bold; padding-bottom: 6px;}
+.fsize1 { font-size: 1em; font-weight: bold; padding-bottom: 0px;}
 .ico { font-size:3.2em; color: #4a87ee;}
 .paddingT44 { padding-top:44px;}
 .marginT20 {margin-top: 20px;}

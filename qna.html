@@ -5,9 +5,9 @@
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-  <title>首页</title>
-  <meta name="keywords" content="【城市名称】汽车团购，汽车团购，【城市名称】汽车团购网" />
-  <meta name="description" content="【城市名称】汽车团购，永远免费为【城市名称】车友提供最专业的汽车团购服务，用最优惠价格购买优质汽车。热线：0596-86868738." />
+  <title>汽车团购|最专业的汽车团购网_优优买车</title>
+  <meta name="keywords" content="汽车团购，汽车团购，汽车团购网" />
+  <meta name="description" content="汽车团购，永远免费为车友提供最专业的汽车团购服务，用最优惠价格购买优质汽车。热线：0596-86868738." />
   <!-- style -->
   <link rel="stylesheet" href="css/ionic.min.css"/>
   <link rel="stylesheet" href="css/ionicons.min.css"/>
@@ -21,8 +21,10 @@
             </h4>
             <div class="more">more</div>
         </div>
+        <section class="cloumn3">
         <div class="question">
         	<h3>1.参加优优买车到底能优惠多少钱？</h3>
+          <div class="slideCont">
         	<p><span class="fontB">优优买车回复：</span>参加团车网比您自己去展厅买车更便宜，原理如下：</p>
         	<p>A价：您第一次到4S店能谈到的优惠； </p>
         	<p>B价：您第二次到4S店能谈到的优惠；</p>
@@ -30,18 +32,39 @@
         	<p>D价：谈判能力强、且对市场行情熟悉的您在4S店能谈到的最大优惠；</p>
         	<p>E价：4S店展厅的最大优惠；</p>
         	<p>F价：参加团购不用劳神得到的团购优惠。</p>
+          </div>
         	<hr class="hrStyle">
 
         	<h3>2.参加优优买车需要收费吗?</h3>
+          <div class="slideCont">
         	<p><span class="fontB">优优买车回复：</span>整个购车全程免费，在购车过程中不直接或者间接收取任何费用，如有需要收取费用请及时举报或反馈。</p>
+          </div>
         	<hr class="hrStyle">
 
         	<h3>3.参加优优买车需要收费吗?</h3>
+          <div class="slideCont">
         	<p><span class="fontB">优优买车回复：</span>三同、三不同。三同：同样的车、同样的店、同样的售后服务保障。三不同：</p>
         	<p>A、省钱省时（享受当日最低价、无需四处奔波、无须货比三家，加入团购，轻松省时。）</p>
         	<p>B、更多服务（可享受车商及团车网提供的售前、售中和售后的一系列服务。）</p>
         	<p>C、快乐交友（团车网每次活动都有上百位网友参加，轻松团购，快乐交友。）</p>
+          </div>
         	<hr class="hrStyle">
         </div>
+        </section>
+
+<script src="js/jquery/jquery-2.1.3.min.js"></script>
+        <script>
+            $(function(){
+              var opt = 0;
+              $('.question .slideCont').eq(opt).slideDown();
+              $('.question h3').each(function(i,item){
+                $(this).click(function(){
+                  $('.question .slideCont').eq(i).slideDown();
+                  $('.question .slideCont').eq(opt).slideUp();
+                  opt = i;
+                })
+              })
+            })
+        </script>
 </body>
 </html>
