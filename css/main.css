@@ -212,7 +212,7 @@ br.clearfix { height: 0; clear: both; line-height: 0;}
 .city-select h3 {font-size: 16px; font-weight: bold;}
 .city-select .groups li {
     background:#4a87ee;
-    padding:10px 20px;
+    padding:5px 10px;
     margin:4px;
     border-radius: 5px;
     color:#fff;

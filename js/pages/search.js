@@ -32,10 +32,10 @@ $(function() {
 			}
 
 			var postData = {
-				carId: $('#modelnumb').val()
+				id: $('#modelnumb').val()
 			}
 
-			window.location.href = './result.html?carId=' + postData.carId;
+			window.location.href = './result.html?Id=' + postData.id;
 			/*$.ajax({
 				type: 'get',
 				data: postData,

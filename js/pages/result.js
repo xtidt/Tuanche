@@ -1,16 +1,16 @@
 $(function() {
-	var id = null
-	,carId = null
+	var Id = null
 	,pageIndex = 1
 	,pageSize = 10
 	,cityId = null
 	,flag = false;//是否加载完全
+	var tuanId = null;;
 
 	pageInit();
 	function pageInit() {
 		//绑定事件
-		carId = $.hash.getUrlParam("carId");
-		if(!!carId){
+		Id = $.hash.getUrlParam("Id");
+		if(!!Id){
 			// ajax
 			loadData();
 			BindEvent();
@@ -22,28 +22,26 @@ $(function() {
 		// drawList(testData);//测试数据
 		$.ajax({
 			type:'get',
-			url: ApiUrl + 'CarModel/GetByCarId',
+			url: ApiUrl + 'CarModel/GetById',
 			data:{
-				carId : carId
+				id : Id
 			},
 			success:function(data){
 				if(data.Data.length == 0){
 					var tempData = {
-					   "Code"        : 1,
-					   "Data"        : [
-					      {
-					         "id"          : 1,
-					         "carId"       : 1,
-					         "modelName"   : '-',
-					         "naked"       : "暂时无真实报价",
-					         "purchaseTax" : "暂时无真实报价",
-					         "card"        : "暂时无真实报价",
-					         "insurance"   : "暂时无真实报价",
-					         "allPrice"    : "暂时无真实报价",
-					         "createTime"  : "-",
-					         "status"      : 1
-					      }
-					   ]
+						"Code": 1,
+						"Data": {
+							"id": 1,
+							"carId": 1,
+							"modelName": "暂时无真实报价",
+							"naked": "暂时无真实报价",
+							"purchaseTax": "暂时无真实报价",
+							"card": "暂时无真实报价",
+							"insurance": "暂时无真实报价",
+							"allPrice": "暂时无真实报价",
+							"createTime": "-",
+							"status": 1
+						}
 					}
 					drawList(tempData);
 				}else{
@@ -61,7 +59,7 @@ $(function() {
 
 	function loadHistory(){
 		var postData = {
-			carModelId : carId,
+			carModelId : Id,
 			pageIndex : pageIndex,
 			pageSize : pageSize,
 			cityId : cityId
@@ -86,14 +84,14 @@ $(function() {
 
 	//绘制数据
 	function drawList(msg){
-		id = msg.Data[0].id;
+		tuanId = msg.Data.id;
 
-		$('#modelName').text(msg.Data[0].modelName);
-		$('#naked').text(msg.Data[0].naked);
-		$('#purchaseTax').text(msg.Data[0].purchaseTax);
-		$('#card').text(msg.Data[0].card);
-		$('#insurance').text(msg.Data[0].insurance);
-		$('#allPrice').text(msg.Data[0].allPrice);
+		$('#modelName').text(msg.Data.modelName);
+		$('#naked').text(msg.Data.naked);
+		$('#purchaseTax').text(msg.Data.purchaseTax);
+		$('#card').text(msg.Data.card);
+		$('#insurance').text(msg.Data.insurance);
+		$('#allPrice').text(msg.Data.allPrice);
 	}
 
 	function historyList(data){
@@ -136,8 +134,8 @@ $(function() {
 			}
 
 			var postData = {
-				tuanId: id,
-				carId: carId,
+				tuanId: tuanId,
+				carId: Id,
 				tel: $('#mobile').val(),
 				name: $('#name').val()
 			}
@@ -157,20 +155,18 @@ $(function() {
 
 var testData = {
    "Code"        : 1,
-   "Data"        : [
-      {
-         "id"          : 1,
-         "carId"       : 1,
-         "modelName"   : "途观2012 自动挡",
-         "naked"       : "20.3w（优惠2w）",
-         "purchaseTax" : "12000",
-         "card"        : "800",
-         "insurance"   : "7000",
-         "allPrice"    : "21w",
-         "createTime"  : "\/Date(1426224127353)\/",
-         "status"      : 1
-      }
-   ]
+   "Data"        : {
+      "id"          : 1,
+      "carId"       : 1,
+      "modelName"   : "途观2012 自动挡",
+      "naked"       : "20.3w（优惠2w）",
+      "purchaseTax" : "12000",
+      "card"        : "800",
+      "insurance"   : "7000",
+      "allPrice"    : "21w",
+      "createTime"  : "\/Date(1426224127353)\/",
+      "status"      : 1
+   }
 }
 
 var testData2 = {
