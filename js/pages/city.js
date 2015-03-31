@@ -54,7 +54,7 @@ $(function() {
         $.cookie('CityName', tempName);
         setTimeout(function(){
           window.history.go(-1);
-        },500);
+        },1000);
       })
     })
   }

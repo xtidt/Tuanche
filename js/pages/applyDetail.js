@@ -52,7 +52,7 @@ $(function() {
 		var _data = arguments[0].Data;
 		$('#picUrl').html('<img src="' + _data.picUrl + '">');
 		// $('#picUrl2').html('<img src="' + _data.picUrl + '">');
-		$('#signUpNum').text(_data.signUpNum);
+		$('#signUpNum').text(_data.signUpNum+'人');
 		$('#tuanTime').text(_data.tuanTime);
 	}
 
