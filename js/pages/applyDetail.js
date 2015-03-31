@@ -26,11 +26,13 @@ $(function() {
 	// ajax数据
 	function loadData() {
 		loadBrand(drawBrand);
-		loadInfo(drawInfo); //加载团购基本信息
+		if(type == 2){
+			loadInfo(drawInfo); //加载团购基本信息
+		}
 	}
 
 	function loadInfo(callback) {
-		// callback(_testInfo);
+		// callback(_testInfo);//测试数据
 		$.ajax({
 			type: 'get',
 			data: {
@@ -49,7 +51,7 @@ $(function() {
 		if (arguments.length == 0) return false;
 		var _data = arguments[0].Data;
 		$('#picUrl').html('<img src="' + _data.picUrl + '">');
-		$('#picUrl2').html('<img src="' + _data.picUrl + '">');
+		// $('#picUrl2').html('<img src="' + _data.picUrl + '">');
 		$('#signUpNum').text(_data.signUpNum);
 		$('#tuanTime').text(_data.tuanTime);
 	}
@@ -121,10 +123,6 @@ $(function() {
 		if(type == 1){
 			$('#brand').val(carBandId);
 			loadCar(carBandId, drawCarList);
-			$('#carmodel').on('change',function(){
-				carId = $(this).val();
-				loadInfo();
-			});
 		}
 
 		// $('#js-hot-car').empty().html(htmlStr);
@@ -140,6 +138,14 @@ $(function() {
 			htmlStr += '<option value="' + _data[i].id + '">' + _data[i].name + '</option>';
 			$('#carmodel').append(htmlStr);
 		}
+
+		carId = _data[0].id;
+		$('#carmodel').val(carId);
+		loadInfo(drawInfo);
+		$('#carmodel').on('change',function(){
+			carId = $(this).val();
+			loadInfo(drawInfo);
+		});
 		// $('#carmodel').trigger("chosen:updated");
 	}
 
