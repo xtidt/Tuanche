@@ -82,6 +82,7 @@ br.clearfix { height: 0; clear: both; line-height: 0;}
 	position: relative;
 	bottom: -10px;
 	background: #fff;
+	width: 180px;
 }
 
 /*热门品牌*/
@@ -222,7 +223,9 @@ br.clearfix { height: 0; clear: both; line-height: 0;}
 /*汽车团购*/
 #regiment {
     padding:0;
+    text-align: center;
 }
+#regiment .imgStyle { font-size: 4em; margin-top: 50%; position: relative; top:0.3em; color: #4a87ee; }
 .cloumn {
 	margin-left: -11px;
 	margin-right: -11px;
@@ -318,8 +321,12 @@ br.clearfix { height: 0; clear: both; line-height: 0;}
 .fontB { font-weight: bold;}
 .fontC1 { color:#145fd7;}
 .fontS1 { font-size: 16px;}
+.fontS2 { font-size: 14px;}
 .border-s1 { border-bottom:1px dotted #c7cdd9;}
 .paddingS1 { padding:4px 0;}
+.text-ellipsis {text-overflow:ellipsis; overflow:hidden; white-space:nowrap; }
+.js-open { display: none;}
+
 input {background: #f9f9f9;}
 
 footer {

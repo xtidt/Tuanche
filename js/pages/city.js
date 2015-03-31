@@ -52,7 +52,9 @@ $(function() {
         var tempName = $(this).text();
         $.cookie('CityId', tempId);
         $.cookie('CityName', tempName);
-        window.history.go(-1);
+        setTimeout(function(){
+          window.history.go(-1);
+        },500);
       })
     })
   }
