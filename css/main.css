@@ -18,6 +18,7 @@ body img { width: 100%;}
 .header .topHeader { width: 40%; text-align: center;}
 .header .topHeader a { color: #fff; text-decoration: none;}
 .header .logBar { width: 30%; text-align: right;}
+.header .logBar a { color:#fff;}
 .header .logBar i { font-size: 18px; padding-right: 10px; }
 
 .header #logo,#reply { width: 30%;}

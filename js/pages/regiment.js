@@ -89,7 +89,7 @@ $(function() {
 
 	//加载品牌
 	function loadBrand(callback) {
-			// callback(testDataBrand); //测试数据
+			callback(testDataBrand); //测试数据
 			$.ajax({
 				type: 'get',
 				data: {},
@@ -103,7 +103,7 @@ $(function() {
 		}
 		//加载车型
 	function loadCar(brandId, callback) {
-		// callback(testCar); //测试数据
+		callback(testCar); //测试数据
 		$.ajax({
 			type: 'get',
 			data: {

@@ -1,4 +1,5 @@
 $(function() {
+  var returnUrl = $.hash.getUrlParam("returnUrl");
   function pageInit() {
     // ajax
     loadData();
@@ -53,8 +54,8 @@ $(function() {
         $.cookie('CityId', tempId);
         $.cookie('CityName', tempName);
         setTimeout(function(){
-          window.history.go(-1);
-        },1000);
+          window.location.href = returnUrl+'.html';
+        },0);
       })
     })
   }
