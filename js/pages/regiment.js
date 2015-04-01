@@ -1,21 +1,21 @@
 $(function() {
 	pageInit();
-	var component1, component2;
+	var BrandData = null;//品牌数据
+	var _currentBrandId = null;
 
 	function pageInit() {
-		// ajax
-		loadData();
 		//绑定事件
 		BindEvent();
 	}
 
 	// ajax数据
 	function loadData() {
-		loadBrand(drawBrand)
+		loadBrand(drawBrand);
 	}
 
 	//绑定事件
 	function BindEvent() {
+		//提交
 		var re = /^1\d{10}$/;
 		$('#apply').on('click', function() {
 			if ($('#brand').val() == '') {
@@ -52,26 +52,20 @@ $(function() {
 				}
 			});
 		})
+
+		//品牌获得
+		// ajax Brand
+		$('#brandname').on('click',function(){
+			loadBrand(drawBrand);
+		})
 	}
 
 	//品牌选取
 	function drawBrand() {
 		if (arguments.length == 0) return false;
-		var _data = arguments[0].Data;
-		for (var i = 0, len = _data.length; i < len; i++) {
-			for (var j = 0, jlen = _data[i].carBand.length; j < jlen; j++) {
-				var htmlStr = '';
-				htmlStr += '<option value="' + _data[i].carBand[j].id + '">' + _data[i].carBand[j].carBand + '</option>';
-				$('#brand').append(htmlStr);
-			}
-
-		}
-
-		$('#brand').change(function() {
-			loadCar($(this).val(), drawCarList);
-		});
-
-		// $('#js-hot-car').empty().html(htmlStr);
+		var _data = BrandData = arguments[0].Data;
+		//品牌弹出框
+		loadCarPop(_data);
 	}
 
 	//车型选取
@@ -89,7 +83,7 @@ $(function() {
 
 	//加载品牌
 	function loadBrand(callback) {
-			callback(testDataBrand); //测试数据
+			// callback(testDataBrand); //测试数据
 			$.ajax({
 				type: 'get',
 				data: {},
@@ -103,7 +97,7 @@ $(function() {
 		}
 		//加载车型
 	function loadCar(brandId, callback) {
-		callback(testCar); //测试数据
+		// callback(testCar); //测试数据
 		$.ajax({
 			type: 'get',
 			data: {
@@ -116,6 +110,39 @@ $(function() {
 				}
 			}
 		});
+	}
+
+	// 品牌弹出框
+	function loadCarPop(items){
+		var htmlStr = '<div id="brandPop">\
+						    <h3 class="pop-title">请选择参团品牌<i class="ion-ios-close-outline closeBtn"></i></h3>\
+						    <article id="brand-cont" class="clearfix">\
+						    </article>\
+						</div>';
+		$('body').append(htmlStr);
+		var _data = items;
+		for (var i = 0, len = _data.length; i < len; i++) {
+			for (var j = 0, jlen = _data[i].carBand.length; j < jlen; j++) {
+				var htmlStr = '';
+				htmlStr += '<li data-value="' + _data[i].carBand[j].id + '">' + _data[i].carBand[j].carBand + '</li>';
+				$('#brand-cont').append(htmlStr);
+			}
+		}
+
+		$('#brandPop li').each(function(i,cell){
+			var _self = $(this);
+			_self.off().on('click',function(){
+				_currentBrandId = _self.attr('data-value');
+				$('#brand').val(_currentBrandId);
+				$('#brandname').text(_self.text());
+				$('#brandPop').remove();
+				loadCar(_currentBrandId, drawCarList);
+			})
+		})
+
+		$('#brandPop .closeBtn').off().on('click',function(){
+			$('#brandPop').remove();
+		})
 	}
 })
 

@@ -3,6 +3,9 @@ $(function() {
   function pageInit() {
     // ajax
     loadData();
+
+    // 返回上一页
+    $('#reply a').attr({'href':returnUrl+'.html'});
   }
 
   function loadData() {
